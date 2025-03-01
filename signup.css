@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: lightslategray;
+    background-size: cover;
+}
+
+.signup-box {
+    background: gray;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.signup-box:hover {
+    transform: scale(1.05);
+}
+
+.signup-box h1 {
+    margin-bottom: 20px;
+}
+
+.signup-box input {
+    width: 100%;
+    padding: 10px 0px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup-box button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #020202;
+    color: white;
+    cursor: pointer;
+}
+
+.signup-box button:hover {
+    background-color: lightslategrey;
+}
+
+.signup-box a {
+    display: block;
+    margin: 10px 0;
+    color: #020202;
+    text-decoration: none;
+}
+
+.signup-box a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+.signup-box .login {
+    display: block;
+    margin-top: 10px;
+    color: #020202;
+    text-decoration: none;
+}
+
+.signup-box .login:hover {
+    text-decoration: underline;
+}
