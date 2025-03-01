@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <div class="login-box">
+        <h1>SneaKpEEk</h1>
+        <form action="{{ url_for('login') }}" method="post">
+            <input type="text" name="username" placeholder=" Username" required>
+            <input type="password" name="password" placeholder=" Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <a href="#">Forgot Password?</a>
+        <a href="{{ url_for('signup') }}" class="signup">Sign Up</a>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <script>
+                    alert("No account found. Please sign up.");
+                </script>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

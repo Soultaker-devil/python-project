@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneaker Shop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://kit.fontawesome.com/217b007a2b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="path/to/logo.png" alt="Logo">
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#new">New Arrivals</a></li>
+                <li><a href="#contact">Contact</a></li>
+                {% if session['username'] %}
+                    <li><a href="#profile">My Profile</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login') }}">Sign Up/Log In</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1><strong>SneaKpEEk</strong></h1>
+            <h1>Step Up Your Style</h1>
+            <p>Discover the latest sneaker trends and shop your favorite styles.</p>
+            <a href="#shop" class="btn">Shop Now</a>
+        </div>
+    </section>
+    
+    <section class="products" id="shop">
+        <h2>New Arrivals</h2>
+        <div class="product-grid">
+            {% for product in products %}
+            <div class="product">
+                <img src="{{ product[4] }}" alt="{{ product[1] }}">
+                <h3>{{ product[1] }}</h3>
+                <p>{{ product[2] }}</p>
+                <p>${{ product[3] }}</p>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">CONTACT ME</h1>
+                    <p><i class="fa-solid fa-envelope"></i> shivam258467@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> 7406382780</p>
+                    <p><i class="fa-brands fa-telegram"></i> 7406382780</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://x.com/home?lang=en-in"><i class="fa-brands fa-x-twitter"></i></i></a>
+                        <a href="https://www.linkedin.com/feed/"><i class="fa-brands fa-linkedin"></i></i></a>
+                        <a href="https://github.com/"><i class="fa-brands fa-square-github"></i></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet" method="POST" action="{{ url_for('contact') }}">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright with Shivam Kumar <i class="fa-solid fa-heart"></i></p>
+        </div>
+    </div>
+    
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    
+        window.onload = function() {
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    alert("{{ messages[0] }}");
+                    setTimeout(function() {
+                        location.reload();
+                    }, 5000);
+                {% endif %}
+            {% endwith %}
+        };
+    </script>
+</body>
+</html>
