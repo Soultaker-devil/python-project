@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Arrivals - Sneaker Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/new_arrivals.css') }}">
+</head>
+<body>
+    <header>
+        <h1>NEW ARRIVALS</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('shop') }}">Shop</a></li>
+                <li><a href="{{ url_for('new_arrivals') }}">New Arrivals</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="banner">
+        <h2>Fresh Sneaker Drops</h2>
+        <p>Explore the latest arrivals and get your hands on the trendiest sneakers.</p>
+        <button>Shop Now</button>
+    </div>
+    
+    <div class="new-arrivals-container">
+        <main class="product-grid">
+            <div class="product">
+                <img src="new_sneaker1.jpg" alt="New Sneaker 1">
+                <h3>Limited Edition Sneakers</h3>
+                <p>$140</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="new_sneaker2.jpg" alt="New Sneaker 2">
+                <h3>Latest Sports Sneakers</h3>
+                <p>$135</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="new_sneaker3.jpg" alt="New Sneaker 3">
+                <h3>Trendy Casual Sneakers</h3>
+                <p>$125</p>
+                <button>Add to Cart</button>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

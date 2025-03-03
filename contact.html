@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+    <script src="https://kit.fontawesome.com/217b007a2b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Contact Us</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('shop') }}">Shop</a></li>
+                    <li><a href="{{ url_for('new_arrivals') }}">New Arrivals</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>    
+
+    <section class="contact-info">
+        <p><i class="fas fa-envelope"></i> Email: support@shoestore.com</p>
+        <p><i class="fas fa-phone"></i> Helpline: +91 1234567890</p>
+        <p><i class="fab fa-whatsapp"></i> WhatsApp: +91 9876543210</p>
+        <p><i class="fab fa-telegram"></i> Telegram: @shoestore</p>
+    </section>
+
+    <section class="social-links">
+        <a href="https://instagram.com" class="social-icon"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://facebook.com" class="social-icon"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="https://twitter.com" class="social-icon"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="https://linkedin.com" class="social-icon"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </section>
+
+    <section class="feedback-form">
+        <h2>Feedback</h2>
+        <form id="feedbackForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="feedback" placeholder="Your Feedback" required></textarea>
+            <button type="submit">Submit</button>
+            <p id="successMessage" class="hidden">Message Sent Successfully!</p>
+        </form>
+    </section>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('successMessage').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('successMessage').classList.add('hidden');
+                document.getElementById('feedbackForm').reset();
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

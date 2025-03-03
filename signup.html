@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+</head>
+<body>
+    <div class="signup-box">
+        <h1>SneaKpEEk</h1>
+        <form action="{{ url_for('signup') }}" method="post">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <a href="{{ url_for('login') }}" class="login">Already have an account? Log In</a>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <script>
+                    alert("{{ messages[0] }}");  // Display the first flashed message
+                </script>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

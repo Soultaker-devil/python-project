@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Sneaker Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/shop.css') }}">
+</head>
+<body>
+    <header>
+        <h1>SHOP</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('shop') }}">Shop</a></li>
+                <li><a href="{{ url_for('new_arrivals') }}">New Arrivals</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="shop-container">
+        <aside class="sidebar">
+            <h2>Filters</h2>
+            <label>Brand</label>
+            <select>
+                <option>Nike</option>
+                <option>Adidas</option>
+                <option>Puma</option>
+            </select>
+            <label>Price Range</label>
+            <input type="range" min="50" max="500">
+        </aside>
+
+        <main class="product-grid">
+            <div class="product">
+                <img src="{{ url_for('static', filename='images/sneaker3.jpg') }}" alt="Sneaker 3">
+                <h3>New Arrivals</h3>
+                <p>$130</p>
+                <button>Add to Cart</button>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

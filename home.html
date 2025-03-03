@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneaker Shop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://kit.fontawesome.com/217b007a2b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="path/to/logo.png" alt="Logo">
+                </div>
+                <ul class="nav-options">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('shop') }}">Shop</a></li>
+                    <li><a href="{{ url_for('new_arrivals') }}">New Arrivals</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    {% if session['username'] %}
+                        <li><a href="{{ url_for('profile') }}">My Profile</a></li>
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('login') }}">Sign Up/Log In</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1><strong>SneaKpEEk</strong></h1>
+            <h1>Step Up Your Style</h1>
+            <p>Discover the latest sneaker trends and shop your favorite styles.</p>
+            <a href="{{ url_for('shop') }}" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="new-arrivals">
+        <div class="new-arrivals-container">
+            <div class="text-content">
+                <span class="badge">New Arrivals!</span>
+                <h2><span class="highlight">New Sneakers!</span> are here Baby!</h2>
+                <p>Presenting the best sneakers from around the world!</p>
+                <div class="buttons">
+                    <a href="{{ url_for('shop') }}" class="btn shop-btn">Shop Now</a>
+                    <a href="{{ url_for('verify') }}" class="btn verify-btn">Verify Yours here →</a>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='images/sneakers.jpg') }}" alt="New Arrivals">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        window.onload = function() {
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    alert("{{ messages[0] }}");
+                    setTimeout(function() {
+                        location.reload();
+                    }, 5000);
+                {% endif %}
+            {% endwith %}
+        };
+    </script>
+</body>
+</html>

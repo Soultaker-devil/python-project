@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+    <script src="https://kit.fontawesome.com/217b007a2b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <ul>
+                <li><a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="{{ url_for('profile') }}" class="{% if request.endpoint == 'profile' %}active{% endif %}"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="{{ url_for('orders') }}" class="{% if request.endpoint == 'orders' %}active{% endif %}"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+                <li><a href="{{ url_for('new_arrivals') }}" class="{% if request.endpoint == 'new_arrivals' %}active{% endif %}"><i class="fas fa-heart"></i> New Arrivals</a></li>
+                <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Profile Section -->
+        <main class="profile-section">
+            <div class="profile-card">
+                <img src="profile.jpg" alt="User Image" class="profile-pic">
+                <h2>John Doe</h2>
+                <p>Email: johndoe@example.com</p>
+                <p>Phone: +91 9876543210</p>
+                <button>Edit Profile</button>
+            </div>
+
+            <!-- Order History -->
+            <div class="order-history">
+                <h2>Order History</h2>
+                <ul>
+                    <li><i class="fas fa-box"></i> Order #1234 - Delivered</li>
+                    <li><i class="fas fa-box"></i> Order #1235 - In Transit</li>
+                    <li><i class="fas fa-box"></i> Order #1236 - Processing</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
