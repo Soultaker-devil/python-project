@@ -1,0 +1,127 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #1e1e1e;
+    height: 100vh;
+    padding-top: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.sidebar ul li a.active {
+    color: #ff4c4c;
+    font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+    color: #ff4c4c;
+}
+
+/* Profile Section */
+.profile-section {
+    margin-left: 270px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+/* Profile Card */
+.profile-card {
+    background: #242424;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    margin: auto;
+}
+
+.profile-card .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-card h2 {
+    margin: 10px 0;
+}
+
+.profile-card p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #bbb;
+}
+
+.profile-card button {
+    background: #ff4c4c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.profile-card button:hover {
+    background: #ff1c1c;
+}
+
+/* Order History */
+.order-history {
+    margin-top: 30px;
+    background: #242424;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin: auto;
+}
+
+.order-history h2 {
+    margin-bottom: 10px;
+}
+
+.order-history ul {
+    list-style: none;
+    padding: 0;
+}
+
+.order-history ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+.order-history ul li i {
+    color: #ff4c4c;
+}

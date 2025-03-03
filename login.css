@@ -1,0 +1,90 @@
+@import url('style.css'); /* Import the main style.css file */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background-color);
+    background-size: cover;
+}
+
+.login-box {
+    background-color: var(--white-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 100px auto;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.login-box:hover {
+    transform: scale(1.05);
+}
+
+.login-box h1 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.login-box button:hover {
+    background-color: #FF4500; /* Darker red */
+}
+
+.login-box a {
+    display: block;
+    margin-top: 10px;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.login-box a:hover {
+    text-decoration: underline;
+}
+
+.login-box .signup {
+    display: block;
+    margin-top: 10px;
+    color: #020202;
+    text-decoration: none;
+}
+
+.login-box .signup:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,87 @@
+@import url('style.css'); /* Import the main style.css file */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background-color);
+    background-size: cover;
+}
+
+.signup-box {
+    background-color: var(--white-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.signup-box:hover {
+    transform: scale(1.05);
+}
+
+.signup-box h1 {
+    margin-bottom: 20px;
+}
+
+.signup-box input {
+    width: 100%;
+    padding: 10px 0px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup-box button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+.signup-box button:hover {
+    background-color: var(--secondary-color);
+}
+
+.signup-box a {
+    display: block;
+    margin: 10px 0;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.signup-box a:hover {
+    text-decoration: underline;
+    color: var(--secondary-color);
+}
+
+.signup-box .login {
+    display: block;
+    margin-top: 10px;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.signup-box .login:hover {
+    text-decoration: underline;
+}
